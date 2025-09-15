@@ -12,8 +12,8 @@ onload = () =>{
                 img.style.position = 'absolute';
                 img.style.maxWidth = '100%';
                 img.style.height = 'auto';
-                // z-index alto para la última imagen agregada
-                img.style.zIndex = totalImgs + 1 - i;
+                // z-index incremental para cada imagen
+                img.style.zIndex = 2 + (totalImgs - i);
                 img.style.transition = 'all 0.5s';
                 if (i % 2 === 1) {
                     // Impar: izquierda
