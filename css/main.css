@@ -39,8 +39,35 @@ body {
   }
 
 }
+/* Contenedores de imágenes laterales */
+.img-side {
+  position: fixed;
+  bottom: 0;
+  width: 220px;
+  height: 80vh;
+  pointer-events: none;
+}
+.img-left {
+  left: 1%;
+  bottom: 1%;
+}
+.img-right {
+  right: 1%;
+  bottom: 1%;
+}
+/* Asegura que el h1.titulo esté por encima de todo */
 .titulo {
-  margin-bottom: 180px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 90%;
+  text-align: center;
+  color: #ffd700;
+  text-shadow: 2px 2px 8px #333;
+}
+.titulo {
   font-family: "Arial Narrow", Arial, sans-serif;
   color: yellow;
   position: absolute;
