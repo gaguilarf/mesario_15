@@ -5,28 +5,27 @@ onload = () =>{
     const leftContainer = document.getElementById('img-left');
     const rightContainer = document.getElementById('img-right');
     let delay = 3000;
+    let z = 2;
     for (let i = totalImgs; i >= 0; i--) {
-            setTimeout(() => {
-                const img = document.createElement('img');
-                img.src = `img/img_${i}.jpg`;
-                img.style.position = 'absolute';
-                img.style.maxWidth = '100%';
-                img.style.height = 'auto';
-                // z-index incremental para cada imagen
-                img.style.zIndex = 2 + (totalImgs - i);
-                img.style.transition = 'all 0.5s';
-                if (i % 2 === 1) {
-                    // Impar: izquierda
-                    img.style.left = `${(totalImgs-i+1)}px`;
-                    img.style.bottom = `${(totalImgs-i+1)}px`;
-                    leftContainer.appendChild(img);
-                } else {
-                    // Par: derecha
-                    img.style.right = `${(totalImgs-i+1)}px`;
-                    img.style.bottom = `${(totalImgs-i+1)}px`;
-                    rightContainer.appendChild(img);
-                }
-            }, delay);
-            delay += 1000;
-        }
+        setTimeout(() => {
+            const img = document.createElement('img');
+            img.src = `img/img_${i}.jpg`;
+            img.style.position = 'absolute';
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+            img.style.zIndex = z;
+            img.style.transition = 'all 0.5s';
+            if (i % 2 === 1) {
+                img.style.left = `${(totalImgs-i+1)}px`;
+                img.style.bottom = `${(totalImgs-i+1)}px`;
+                leftContainer.appendChild(img);
+            } else {
+                img.style.right = `${(totalImgs-i+1)}px`;
+                img.style.bottom = `${(totalImgs-i+1)}px`;
+                rightContainer.appendChild(img);
+            }
+            z++;
+        }, delay);
+        delay += 1000;
+    }
 };
